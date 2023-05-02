@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plan-Pedia</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+       
+      
+        <a href="/"><li>Home</li></a>
+        
+        
+        {{#if logged_in}}
+        <a href="/newblog"><li>test</li></a>
+         <button class="no-button" id="logout">logout</button>
+         {{else}}
+        <a href="/login"><li>Login</li></a>
+        {{/if}}
+       
+      </ul>
+    </nav>
+    
+  </header>
+
+  <main>
+    {{{body}}}
+  </main>
+
+  <footer>
+
+  </footer>
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
+</body>
+</html>
