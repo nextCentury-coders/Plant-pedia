@@ -2,174 +2,41 @@
   <div class="col-md-6">
     <h2>Login</h2>
 
-    <div class="container">
-        <div class="welcome">
-            <h2>SIGN IN</h2>
-        </div>
-        <form>
-            <div class="username">
-                <i class="fa fa-user" style="margin-left: -27.5px; margin-top: -2px; font-size: 24px; border: 1px solid #e6e6e6; padding: 3.1px; padding-top: 5px; padding-right: 10px; border-right-color: #fff;">
-                    <input type="text" class="username" id="username" style="margin-top: 3px; margin-left: -7px;" autocomplete="off";>
-                </i>
-            </div>
+    <form class="form login-form">
+      <div class="form-group">
+        <label for="email-login">email:</label>
+        <input class="form-input" type="text" id="email-login" />
+      </div>
+      <div class="form-group">
+        <label for="password-login">password:</label>
+        <input class="form-input" type="password" id="password-login" />
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary" type="submit">login</button>
+      </div>
+    </form>
+  </div>
+  <div class="col-md-6">
+    <h2>Signup</h2>
 
-            <div class="password">
-                <i class="fa-solid fa-key" style="margin-left: -27.5px; margin-top: -1px; font-size: 20px; border: 1px solid #e6e6e6; padding: 3.1px; padding-top: 7px; padding-right: 10px; padding-bottom: 5px; border-right-color: #fff;">
-                    <input type="password" class="password" id="password" style="margin-left: -7px; margin-top: 1px;">
-                </i>
-            </div>
-        </form>
-    </div>
-
-  <style>
-        .container {
-        position: fixed;
-        border: 1px solid white;
-        border-radius: 15px;
-        background-color: white;
-        height: 350px;
-        width: 350px;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        box-shadow: -1px 5px 10px rgba(0, 0, 0, 1);
-        }
-
-        .welcome {
-        border: 1px solid transparent;
-        text-align: center;
-        height: 75px;
-        margin: 10px;
-        }
-
-        .welcome h2{
-        position: absolute;
-        left: 52%;
-        top: 10%;
-        transform: translate(-50%, -50%);
-        letter-spacing: 1px;
-        font-size: 45px;
-        font-family: 'Staatliches', cursive;
-        animation: fadeInAnimation ease 2.5s;
-        animation-iteration-count: 1;
-        animation-fill-mode: forwards;
-        }
-
-        @keyframes fadeInAnimation {
-        0% {
-            opacity: 0;
-        }
-        100% {
-            opacity: 1;
-        }
-        }
-
-        .username {
-        border: 1px solid transparent;
-        background-color: #e6e6e6;
-        height: 30px;
-        width: 155px;
-        outline: 0;
-        position: absolute;
-        left: 56%;
-        top:40%;
-        transform: translate(-50%, -50%);
-        }
-
-        .password {
-        border: 1px solid transparent;
-        background-color: #e6e6e6;
-        height: 32px;
-        width: 155px;
-        outline: 0;
-        position: absolute;
-        left: 56%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        }
-
-    .btn {
-        border: 1px solid transparent;
-        height: 30px;
-        width: 185px;
-        position: absolute;
-        left: 53%;
-        top: 62%;
-        transform: translate(-50%, -50%);
-        background-color: #1a75ff;
-        color: white;
-    }
-
-    .btn p {
-        position: absolute;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-family: 'Staatliches', cursive;
-    }
-
-    .btn:hover {
-        cursor: pointer;
-        box-shadow: -1px 5px 10px #1a75ff;
-    }
-
-    @media only screen and (max-width: 1000px) {
-        .container {
-            position: absolute;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            height: 250px;
-            width: 250px;
-            
-        }
-        
-        .username {
-            border: 1px solid transparent;
-            background-color: #e6e6e6;
-            height: 30px;
-            width: 155px;
-            outline: 0;
-            position: absolute;
-            left: 56%;
-            top:40%;
-            transform: translate(-50%, -50%);
-        }
-
-        .password {
-            border: 1px solid transparent;
-            background-color: #e6e6e6;
-            height: 30px;
-            width: 155px;
-            outline: 0;
-            position: absolute;
-            left: 56%;
-            top: 54%;
-            transform: translate(-50%, -50%);
-        }
-
-        .btn {
-            border: 1px solid transparent;
-            height: 30px;
-            width: 185px;
-            position: absolute;
-            left: 51.5%;
-            top: 69%;
-            transform: translate(-50%, -50%);
-            background-color: #1a75ff;
-            color: white;
-        }
-        
-        #password{
-            position: absolute;
-            top: 15px;
-        }
-        
-        .welcome h2 {
-            position: absolute;
-            left: 52%;
-            top: 2%;
-            transform: translate(-50%, -50%);
-        }
-    }
-  </style>
+    <form class="form signup-form">
+      <div class="form-group">
+        <label for="name-signup">name:</label>
+        <input class="form-input" type="text" id="name-signup" />
+      </div>
+      <div class="form-group">
+        <label for="email-signup">email:</label>
+        <input class="form-input" type="text" id="email-signup" />
+      </div>
+      <div class="form-group">
+        <label for="password-signup">password:</label>
+        <input class="form-input" type="password" id="password-signup" />
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary" type="submit">signup</button>
+      </div>
+    </form>
+  </div>
+</div>
 
 <script src="./js/login.js"></script>
