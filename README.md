@@ -1,3 +1,3 @@
-# plantchester-city
+# plant-pedia
 
 ![Image](Images/project2_DataModel.png)
