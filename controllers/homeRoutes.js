@@ -3,7 +3,7 @@ const { Plant } = require("../models");
 
 router.get("/", async (req, res) => {
     console.log(req.session.loggedIn)
-    res.render("landingPage");
+    res.render("landingPage", { loggedIn: req.session.loggedIn });
 });
 
 router.get("/login", async (req, res) => {
@@ -15,7 +15,8 @@ router.get("/login", async (req, res) => {
 router.get("/plants", async (req, res) => {
     try {
         const plants = await Plant.findAll();
-        res.render("homepage", { plants });
+        console.log(plants);
+        res.render("homepage", { plants, loggedIn: req.session.loggedIn });
       } catch (err) {
         console.error(err);
         res.status(500).json({ message: "Server error" });

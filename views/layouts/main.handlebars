@@ -28,9 +28,11 @@
 
           <a href="/"><li>Home</li></a>
 
-          {{#if logged_in}}
+          {{#if loggedIn}}
             <a href="/newblog"><li>test</li></a>
-            <button class="no-button" id="logout">logout</button>
+            <form method="post" action="api/users/logout">
+              <button class="no-button" id="logout">logout</button>
+            </form>
           {{else}}
             <a href="/login"><li>Login</li></a>
           {{/if}}

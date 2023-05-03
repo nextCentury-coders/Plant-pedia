@@ -1,3 +1,9 @@
+{{!-- 
+  We should have an option underneath each form asking whether the user would like to sign
+  up or log in instead and a continue as guest option. If the user selects login or signup
+  instead, then we will want to add the display: none property to the one that is not being used
+--}}
+
 <div class="row">
   <div class="col-md-6">
     <h2>Login</h2>
@@ -19,18 +25,18 @@
   <div class="col-md-6">
     <h2>Signup</h2>
 
-    <form class="form signup-form">
+    <form class="form signup-form"  method="post" action="/api/users/signup">
       <div class="form-group">
         <label for="name-signup">name:</label>
-        <input class="form-input" type="text" id="name-signup" />
+        <input class="form-input" type="text" id="name-signup" name="name"/>
       </div>
       <div class="form-group">
         <label for="email-signup">email:</label>
-        <input class="form-input" type="text" id="email-signup" />
+        <input class="form-input" type="text" id="email-signup" name="email"/>
       </div>
       <div class="form-group">
         <label for="password-signup">password:</label>
-        <input class="form-input" type="password" id="password-signup" />
+        <input class="form-input" type="password" id="password-signup" name="password"/>
       </div>
       <div class="form-group">
         <button class="btn btn-primary" type="submit">signup</button>
