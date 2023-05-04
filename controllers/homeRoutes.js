@@ -2,13 +2,14 @@ const router = require("express").Router();
 const { Plant } = require("../models");
 
 router.get("/", async (req, res) => {
-    console.log(req.session.loggedIn)
+    // req.session.loggedIn = false;
+    console.log(req.session.loggedIn);
     res.render("landingPage", { loggedIn: req.session.loggedIn });
 });
 
 router.get("/login", async (req, res) => {
     console.log(req.session.loggedIn);
-    res.render("login");
+    res.render("login", {loggedIn: req.session.loggedIn});
 });
 
 // * Create a route for the homepage after the user selects a experience level
