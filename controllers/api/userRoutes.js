@@ -5,12 +5,6 @@ router.post('/', async (req, res) => {
   try {
     const userData = await user.create(req.body);
 
-    req.session.save(() => {
-      req.session.user_id = userData.id;
-      req.session.loggedIn = true;
-
-      res.status(200).json(userData);
-    });
   } catch (err) {
     res.status(400).json(err);
   }
@@ -35,10 +29,8 @@ router.post("/signup", async (req, res) => {
 
 // Set up post route for login
 router.post('/login', async (req, res) => {
-  console.log(req.body.email);
   try {
     const userData = await user.findOne({ where: { email: req.body.email } });
-      console.log('u', userData);
     if (!userData) {
       res
         .status(400)
@@ -59,7 +51,6 @@ router.post('/login', async (req, res) => {
       req.session.user_id = userData.id;
       req.session.loggedIn = true;
       res.render("landingPage", { loggedIn: req.body.loggedIn });
-      res.json({ user: userData, message: 'You are now logged in!' });
     });
 
   } catch (err) {
@@ -69,13 +60,12 @@ router.post('/login', async (req, res) => {
 });
 
 // Set up post route for logout
-router.post('/logout', (req, res) => {
+router.post("/logout", (req, res) => {
   console.log("hey");
   if (req.session.loggedIn) {
     req.session.destroy(() => {
-      res.status(204).end();
+      res.redirect("/login");
     });
-    res.redirect("/login");
   } else {
     res.status(404).end();
   }
