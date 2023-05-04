@@ -39,13 +39,13 @@
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">login</a>
+        <a class="nav-link" href="/login">login</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">signup</a>
+        <a class="nav-link" href="/login">signup</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">continue as guest</a>
+        <a class="nav-link" href="/landingPage">continue as guest</a>
       </li>
     </ul>
   </div>
@@ -55,9 +55,11 @@
 
           <a href="/"><li>Home</li></a>
 
-          {{#if logged_in}}
+          {{#if loggedIn}}
             <a href="/newblog"><li>test</li></a>
-            <button class="no-button" id="logout">logout</button>
+            <form method="post" action="api/users/logout">
+              <button class="no-button" id="logout">logout</button>
+            </form>
           {{else}}
             <a href="/login"><li>Login</li></a>
           {{/if}}

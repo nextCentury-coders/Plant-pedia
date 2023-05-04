@@ -1,36 +1,42 @@
+{{!-- 
+  We should have an option underneath each form asking whether the user would like to sign
+  up or log in instead and a continue as guest option. If the user selects login or signup
+  instead, then we will want to add the display: none property to the one that is not being used
+--}}
+
 <div class="row">
   <div class="col-md-6">
     <h2>Login</h2>
 
-    <form class="form login-form">
-      <div class="form-group">
-        <label for="email-login">email:</label>
-        <input class="form-input" type="text" id="email-login" />
+    <form id="login-form">
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
       </div>
-      <div class="form-group">
-        <label for="password-login">password:</label>
-        <input class="form-input" type="password" id="password-login" />
+      <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required />
       </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">login</button>
-      </div>
+      <button type="submit">Log in</button>
     </form>
+
   </div>
+
   <div class="col-md-6">
     <h2>Signup</h2>
 
-    <form class="form signup-form">
+    <form class="form signup-form"  method="post" action="/api/users/signup">
       <div class="form-group">
         <label for="name-signup">name:</label>
-        <input class="form-input" type="text" id="name-signup" />
+        <input class="form-input" type="text" id="name-signup" name="name"/>
       </div>
       <div class="form-group">
         <label for="email-signup">email:</label>
-        <input class="form-input" type="text" id="email-signup" />
+        <input class="form-input" type="text" id="email-signup" name="email"/>
       </div>
       <div class="form-group">
         <label for="password-signup">password:</label>
-        <input class="form-input" type="password" id="password-signup" />
+        <input class="form-input" type="password" id="password-signup" name="password"/>
       </div>
       <div class="form-group">
         <button class="btn btn-primary" type="submit">signup</button>
