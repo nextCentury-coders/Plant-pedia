@@ -1,3 +1,19 @@
 header {
     float: right;
+    padding: 20px 10px;
+    font-size: 25px;
+    width:100%;
+
+
+
+
+}
+
+nav {
+ border: 1px solid;
+
+}
+
+.card{
+    flex-flow: column wrap;   
 }
