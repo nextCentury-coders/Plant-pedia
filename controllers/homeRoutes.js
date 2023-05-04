@@ -9,7 +9,7 @@ router.get("/", async (req, res) => {
 router.get("/login", async (req, res) => {
     console.log(req.session.loggedIn);
     res.render("login");
-})
+});
 
 // * Create a route for the homepage after the user selects a experience level
 router.get("/plants", async (req, res) => {
@@ -21,6 +21,6 @@ router.get("/plants", async (req, res) => {
         console.error(err);
         res.status(500).json({ message: "Server error" });
       }
-})
+});
 
 module.exports = router;
