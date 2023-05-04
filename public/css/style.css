@@ -1,8 +1,10 @@
+
 header {
     float: right;
     padding: 20px 10px;
     font-size: 25px;
     width:100%;
+    
 
 
 
@@ -11,9 +13,18 @@ header {
 
 nav {
  border: 1px solid;
+ float: right;
+ padding: 20px 10px;
+ font-size: 25px;
+ width:100%;
+
 
 }
 
 .card{
     flex-flow: column wrap;   
+}
+
+/* .col-md-6 {
+    text-align: center;
 }
