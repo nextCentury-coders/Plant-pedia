@@ -7,7 +7,7 @@
 <div class="row">
   
   {{!-- Login form --}}
-  <div class="col-md-6">
+  <div class="col-md-6" id="login">
     <h2>Login</h2>
 
     <form id="login-form">
@@ -21,10 +21,11 @@
       </div>
       <button type="submit">Log in</button>
     </form>
+    <button id="sign-up">Sign up Instead</button>
   </div>
 
   {{!-- Sign up form --}}
-  <div class="col-md-6">
+  <div class="col-md-6" style="display: none;" id="signup">
     <h2>Signup</h2>
 
     <form class="form signup-form"  method="post" action="/api/users/signup">
@@ -44,10 +45,11 @@
         <button class="btn btn-primary" type="submit">signup</button>
       </div>
     </form>
+    <button id="log-in">Log in Instead</button>
   </div>
 
   {{!-- Continue as guest link --}}
-  <a class="nav-link" href="/">continue as guest</a>
+  <a class="nav-link" href="/" id="guest">continue as guest</a>
 </div>
 
 <script src="./js/login.js"></script>

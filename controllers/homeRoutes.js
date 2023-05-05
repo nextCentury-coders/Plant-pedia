@@ -3,8 +3,8 @@ const { Plant } = require("../models");
 
 router.get("/", async (req, res) => {
   try {
+
     const plants = await Plant.findAll();
-    console.log(plants);
     const plantList = await Promise.all(
       plants.map(async (plant) => {
         const plantData = {
@@ -30,14 +30,12 @@ router.get("/", async (req, res) => {
 });
 
 router.get("/login", async (req, res) => {
-  console.log(req.session.loggedIn);
   res.render("login", { loggedIn: req.session.loggedIn });
 });
 
 router.get("/plants/:id", async (req, res) => {
   try {
     const plant = await Plant.findByPk(req.params.id);
-    console.log(plant);
     const plantData = {
       id: plant.id,
       image: plant.plant_image,
@@ -76,5 +74,9 @@ router.post("/plants/:id", async (req, res) => {
     res.status(500).json({ message: "Server error" });
   }
 });
+
+router.get("/new", async (req, res) => {
+    res.render("addNew", { loggedIn: req.session.loggedIn });
+})
 
 module.exports = router;
