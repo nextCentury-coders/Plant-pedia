@@ -15,6 +15,7 @@
       </div>
     </div>
 
+    {{#if loggedIn}}
     <form action="/plants/{{plantData.id}}" method="POST" class="form">
       <h4>Anything wrong above? Please update if you want!</h4>
       <label for="difficulty">Difficulty:</label><br />
@@ -44,7 +45,9 @@
 
       <button type="submit" class="update">Update</button>
     </form>
-
+    {{else}}
+        <h1>Please login</h1>
+    {{/if}}
     <style>
       .card { display: flex; flex-direction: row; margin: 10px; } .img img {
       height: 250px; width: 275px; } .info { margin-inline-start: 10px; } .form
