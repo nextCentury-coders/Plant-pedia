@@ -25,6 +25,14 @@ nav {
     flex-flow: column wrap;   
 }
 
+.main-card {
+    width: 275px;
+    box-shadow: 0 0 10px 2px #bfbfbf;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 /* .col-md-6 {
     text-align: center;
 }

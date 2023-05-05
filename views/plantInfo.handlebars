@@ -11,7 +11,14 @@
         <p>Watering: {{plantData.water}}</p>
         <p>Sun: {{plantData.sun}}</p>
         <p>Indoor/Outdoor: {{plantData.indoor_outdoor}}</p>
-        <p>Hardiness Zone: {{plantData.zone}}</p>
+
+        {{!-- Checks if the plant has a hardiness zone and if not it will display N/A --}}
+        {{#if plantData.zone}}
+          <p>Hardiness Zone: {{plantData.zone}}</p>
+        {{else}}
+          <p>Hardiness Zone: N/A</p>
+        {{/if}}
+        
       </div>
     </div>
 
