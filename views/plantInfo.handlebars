@@ -1,0 +1,56 @@
+<html>
+  <body>
+    <div class="card">
+      <div class="img">
+        <img src="{{plantData.image}}" alt="" />
+      </div>
+
+      <div class="info">
+        <h1>{{plantData.name}}</h1>
+        <p>Difficulty: {{plantData.difficulty}}</p>
+        <p>Watering: {{plantData.water}}</p>
+        <p>Sun: {{plantData.sun}}</p>
+        <p>Indoor/Outdoor: {{plantData.indoor_outdoor}}</p>
+        <p>Hardiness Zone: {{plantData.zone}}</p>
+      </div>
+    </div>
+
+    <form action="/plants/{{plantData.id}}" method="POST" class="form">
+      <h4>Anything wrong above? Please update if you want!</h4>
+      <label for="difficulty">Difficulty:</label><br />
+      <input
+        type="text"
+        id="difficulty"
+        name="difficulty"
+        value="{{plantData.difficulty}}"
+      /><br>
+
+      <label for="water">Watering:</label><br />
+      <input type="text" id="water" name="water" value="{{plantData.water}}" /><br>
+
+      <label for="sun">Sun:</label><br />
+      <input type="text" id="sun" name="sun" value="{{plantData.sun}}" /><br>
+
+      <label for="indoor_outdoor">Indoor/Outdoor:</label><br />
+      <input
+        type="text"
+        id="indoor_outdoor"
+        name="indoor_outdoor"
+        value="{{plantData.indoor_outdoor}}"
+      /><br>
+
+      <label for="zone">Hardiness Zone:</label><br />
+      <input type="text" id="zone" name="zone" value="{{plantData.zone}}" /><br>
+
+      <button type="submit" class="update">Update</button>
+    </form>
+
+    <style>
+      .card { display: flex; flex-direction: row; margin: 10px; } .img img {
+      height: 250px; width: 275px; } .info { margin-inline-start: 10px; } .form
+      { border: 1px solid; padding: 10px; margin: 10px; text-align: center; } .update {
+        margin-top: 10px;
+      }
+    </style>
+  </body>
+</html>
