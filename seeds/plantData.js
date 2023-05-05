@@ -1,10 +1,9 @@
 const sequelize = require("../config/connection")
 const { Plant } = require("../models");
-
 const plantData = [
     {
       // Photo by Markus Spiske
-      plant_image: '../Images/seeds/Tomatoes',
+      plant_image: '../Images/seeds/Tomatoes.jpg',
       plant_name: 'Tomato',
       difficulty: 3,
       watering: 'Regularly, every 2-3 days',
@@ -73,14 +72,10 @@ const plantData = [
       zone: '8-9'
     }
 ]
-
 const seedPlants = async () => {
   await sequelize.sync({ force: true });
-
   await Plant.bulkCreate(plantData);
-
   console.log('\n----- Plants seeded -----\n');
   process.exit(0);
 }
-
 seedPlants();
