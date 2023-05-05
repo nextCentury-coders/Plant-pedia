@@ -66,6 +66,7 @@ const switchToLogIn = async (event) => {
   login.style.display = "block";
   signup.style.display = "none";
 }
+
 switchToSU.addEventListener("click", switchSignUp);
 switchToLI.addEventListener("click", switchToLogIn);
 
