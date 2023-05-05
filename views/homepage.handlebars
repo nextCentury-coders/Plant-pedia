@@ -5,16 +5,12 @@
     <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-4">
       {{#each plantList}}
         <div class="col">
-          <a
-            href="/plants/{{this.id}}"
-            style="color: black; text-decoration:none;"
-          >
+          <a href="/plants/{{this.id}}" class="card-link">
             <div class="main-card">
               <img
                 src="{{this.image}}"
+                alt="{{this.name}}"
                 class="card-img-top"
-                alt="..."
-                style="height: 250px; border-bottom: 1px solid #bfbfbf;"
               />
               <div class="card-body">
                 <h5 class="card-title">{{this.name}}</h5>
@@ -23,6 +19,7 @@
             </div>
           </a>
         </div>
+
       {{/each}}
     </div>
   </body>
