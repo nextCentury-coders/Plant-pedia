@@ -75,4 +75,8 @@ router.post("/plants/:id", async (req, res) => {
   }
 });
 
+router.get("/new", async (req, res) => {
+    res.render("addNew", { loggedIn: req.session.loggedIn });
+})
+
 module.exports = router;

@@ -54,14 +54,11 @@
             and logout button displayed.
              --}}
             {{#if loggedIn}}
-              <li class="nav-item">
-                <form method="post" action="api/users/logout">
-                  <button class="nav-link" id="logout" style="border: none; background-color: transparent; color: grey;">logout</button>
-                </form>
-              </li>
+            {{!-- Created a partial so that the logout button will work no matter what screen the user is on --}}
+                {{> logout-button}}
 
               <li class="nav-item">
-                <form method="post" action="api/plant/">
+                <form method="get" action="new/">
                   <button class="nav-link" id="add-plant" style="border: none; background-color: transparent; color: grey;">Add Plant</button>
                 </form>
               </li>
