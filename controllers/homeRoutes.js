@@ -3,6 +3,7 @@ const { Plant } = require("../models");
 
 router.get("/", async (req, res) => {
   try {
+
     const plants = await Plant.findAll();
     const plantList = await Promise.all(
       plants.map(async (plant) => {

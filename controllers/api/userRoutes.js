@@ -16,10 +16,10 @@ router.post("/signup", async (req, res) => {
   console.log("name", req.body.username);
   try {
     const { email, name, password } = req.body;
-    const newUser = await user.create({ email, name, password });
+    const newUser = await user.create({ email, name, password});
     req.session.loggedIn = true;
     console.log("h",req.session.loggedIn);
-    res.render("homepage", { loggedIn: req.body.loggedIn });
+    res.render("login", { loggedIn: req.body.loggedIn });
     // res.status(200).json(newUser);
   } catch (err) {
     console.log(err);

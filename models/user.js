@@ -36,6 +36,7 @@ user.init(
       },
     },
   },
+
   {
     hooks: {
       beforeCreate: async (newUserData) => {
