@@ -2,6 +2,7 @@ const loginForm = document.getElementById("login-form");
 
 const login = document.getElementById("login");
 const signup = document.getElementById("signup");
+const guest = document.getElementById("guest");
 
 const switchToSU = document.getElementById("sign-up");
 const switchToLI = document.getElementById("log-in");
@@ -56,6 +57,7 @@ const signupFormHandler = async (event) => {
 const switchSignUp = async (event) => {
   event.preventDefault();
   login.style.display = "none";
+  guest.style.display = "none";
   signup.style.display = "block";
 }
 
