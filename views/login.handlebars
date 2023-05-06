@@ -1,12 +1,12 @@
-{{!-- 
+{{! 
   We should have an option underneath each form asking whether the user would like to sign
   up or log in instead and a continue as guest option. If the user selects login or signup
   instead, then we will want to add the display: none property to the one that is not being used
---}}
+}}
 
-<div class="row">
-  
-  {{!-- Login form --}}
+<div class="row login-container">
+
+  {{! Login form }}
   <div class="col-md-6" id="login">
     <h2>Login</h2>
 
@@ -22,34 +22,42 @@
       <button type="submit">Log in</button>
     </form>
     <button id="sign-up">Sign up Instead</button>
+    {{! Continue as guest link }}
+    <a class="nav-link" href="/" id="guest">continue as guest</a>
   </div>
 
-  {{!-- Sign up form --}}
+  {{! Sign up form }}
   <div class="col-md-6" style="display: none;" id="signup">
     <h2>Signup</h2>
 
-    <form class="form signup-form"  method="post" action="/api/users/signup">
+    <form class="form signup-form" method="post" 
+    {{!-- action="/api/users/signup" --}}
+    >
       <div class="form-group">
         <label for="name-signup">name:</label>
-        <input class="form-input" type="text" id="name-signup" name="name"/>
+        <input class="form-input" type="text" id="name-signup" name="name" />
       </div>
       <div class="form-group">
         <label for="email-signup">email:</label>
-        <input class="form-input" type="text" id="email-signup" name="email"/>
+        <input class="form-input" type="text" id="email-signup" name="email" />
       </div>
       <div class="form-group">
         <label for="password-signup">password:</label>
-        <input class="form-input" type="password" id="password-signup" name="password"/>
+        <input
+          class="form-input"
+          type="password"
+          id="password-signup"
+          name="password"
+        />
       </div>
       <div class="form-group">
         <button class="btn btn-primary" type="submit">signup</button>
       </div>
     </form>
     <button id="log-in">Log in Instead</button>
-  </div>
-
-  {{!-- Continue as guest link --}}
+      {{!-- Continue as guest link --}}
   <a class="nav-link" href="/" id="guest">continue as guest</a>
+  </div>
 </div>
 
-<script src="./js/login.js"></script>
+<script src="/js/login.js"></script>

@@ -30,23 +30,19 @@
   <body>
     <header>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        {{! <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button> }}
 
-  
-
-  
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
 
-            {{#if loggedIn}}
+            {{!-- {{#if loggedIn}} --}}
               <li class="nav-item active">
                 <a class="nav-link" href="/">Home
                   <span class="sr-only">(current)</span></a>
               </li>
-            {{/if}}
+             
+            {{!-- {{/if}} --}}
+
+           
 
             {{!-- 
             Checking to see if the user is logged in or not
@@ -54,8 +50,9 @@
             and logout button displayed.
              --}}
             {{#if loggedIn}}
+            
             {{!-- Created a partial so that the logout button will work no matter what screen the user is on --}}
-                {{> logout-button}}
+                {{>logout-button}}
 
               <li class="nav-item">
                 <form method="get" action="new/">
@@ -74,22 +71,7 @@
           </ul>
         </div>
       </nav>
-      {{!-- <nav>
-        <ul>
-
-          <a href="/"><li>Home</li></a>
-
-          {{#if loggedIn}}
-            <a href="/newblog"><li>test</li></a>
-            <form method="post" action="api/users/logout">
-              <button class="no-button" id="logout">logout</button>
-            </form>
-          {{else}}
-            <a href="/login"><li>Login</li></a>
-          {{/if}}
-
-        </ul>
-      </nav> --}}
+      
 
     </header>
 
@@ -102,7 +84,6 @@
     </footer>
     {{#if logged_in}}
      
-{{!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> --}}
       <script src="/js/logout.js"></script>
     {{/if}}
   </body>

@@ -38,14 +38,14 @@ const signupFormHandler = async (event) => {
   const password = document.querySelector("#password-signup").value.trim();
 
   if (name && email && password) {
-    const response = await fetch("/api/user", {
+    const response = await fetch("/api/users", {
       method: "POST",
       body: JSON.stringify({ name, email, password }),
       headers: { "Content-Type": "application/json" },
     });
 
     if (response.ok) {
-      document.location.replace("/profile");
+      window.location.href = "/";
     } else {
       alert(response.statusText);
     }
@@ -70,7 +70,7 @@ const switchToLogIn = async (event) => {
 switchToSU.addEventListener("click", switchSignUp);
 switchToLI.addEventListener("click", switchToLogIn);
 
-document.querySelector(".login-form").addEventListener("submit", loginForm);
+document.querySelector("#login-form").addEventListener("submit", loginForm);
 
 document
   .querySelector(".signup-form")

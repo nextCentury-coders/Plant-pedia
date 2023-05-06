@@ -78,4 +78,6 @@ const seedPlants = async () => {
   console.log('\n----- Plants seeded -----\n');
   process.exit(0);
 }
-seedPlants();
+
+
+module.exports = seedPlants;
