@@ -4,6 +4,7 @@ const user = require('../../models/user');
 router.post('/', async (req, res) => {
   try {
     const userData = await user.create(req.body);
+    res.json(userData)
 
   } catch (err) {
     res.status(400).json(err);

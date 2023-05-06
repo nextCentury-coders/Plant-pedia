@@ -22,7 +22,7 @@ router.get("/", async (req, res) => {
       })
     );
 
-    res.render("homepage", { plantList, loggedIn: req.session.loggedIn });
+    res.render("landingPage", { plantList, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.error(err);
     res.status(500).json({ message: "Server error" });
@@ -78,5 +78,47 @@ router.post("/plants/:id", async (req, res) => {
 router.get("/new", async (req, res) => {
     res.render("addNew", { loggedIn: req.session.loggedIn });
 })
+
+router.get("/indoor", (req, res) => {
+  Plant.findAll({
+    where: {
+      indoor_outdoor: "Indoor/Outdoor"
+    }
+  })
+  .then(results => {
+    // serialize the results
+    const plantResults = results.map(item => item.get({plain: true}))
+
+    console.log(plantResults)
+
+    res.render("indoorPlants", {
+      plantList: plantResults
+    })
+  })
+
+
+
+})  
+
+router.get("/outdoor", (req, res) => {
+  Plant.findAll({
+    where: {
+      indoor_outdoor: "Outdoor"
+    }
+  })
+  .then(results => {
+    // serialize the results
+    const plantResults = results.map(item => item.get({plain: true}))
+
+    console.log(plantResults)
+
+    res.render("outdoorPlants", {
+      plantList: plantResults
+    })
+  })
+
+
+
+}) 
 
 module.exports = router;

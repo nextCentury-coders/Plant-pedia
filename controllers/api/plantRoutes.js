@@ -2,17 +2,17 @@ const router = require("express").Router();
 const { Plant } = require("../../models");
 
 
-// router.get('/plants', async (req, res) => {
-//     try {
-//       const plantData = await Plant.findAll({
-//         include: [{model: Plant}]
-//       });
-//       console.log('hello world')
-//       res.status(200).json(plantData);
-//     } catch (err) {
-//       res.status(500).json(err);
-//     }
-//   });
+router.get('/', async (req, res) => {
+    try {
+      const plantData = await Plant.findAll({
+        // include: [{model: Plant}]
+      });
+      console.log('hello world')
+      res.status(200).json(plantData);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
   
 
 // router.get("/", async (req, res) => {
@@ -44,14 +44,13 @@ const { Plant } = require("../../models");
 //     }
 //   });
   
-
-router.post('/plants',  async (req, res) => {
+// -> POST   /api/plants/
+router.post('/',  async (req, res) => {
+  console.log(req.body)
     // create a new category
     
       try {
-        const plantData = await Plant.create({
-            plant_name: req.body.plant_name,
-        });
+        const plantData = await Plant.create(req.body);
         res.status(200).json(plantData);
       } catch (err) {
         res.status(400).json(err);
