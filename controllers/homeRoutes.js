@@ -121,4 +121,8 @@ router.get("/outdoor", (req, res) => {
 
 }) 
 
+
+
+
+
 module.exports = router;
