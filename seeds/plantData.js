@@ -70,7 +70,53 @@ const plantData = [
       sun: 'Full sun',
       indoor_outdoor: 'Indoor/Outdoor',
       zone: '8-9'
-    }
+    },
+    {
+    plant_image: 'https://images.unsplash.com/photo-1503149779833-1de50ebe5f8a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1335&q=80',
+    plant_name: 'Machinam Manihot',
+    difficulty: 2,
+    watering: 'Regularly, every 2-3 days',
+    sun: 'Partial shade to full sun',
+    indoor_outdoor: 'Indoor/Outdoor',
+    zone: '9-11'
+    },
+    {
+      plant_image: 'https://images.unsplash.com/photo-1616844868137-7ffaf43c2d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=385&q=80',
+      plant_name: 'Rose',
+      difficulty: 2,
+      watering: 'Regularly, once a week',
+      sun: 'Full sun',
+      indoor_outdoor: 'Outdoor',
+      zone: '4-9'
+    },
+    {
+      plant_image: 'https://images.unsplash.com/photo-1597848212624-a19eb35e2651?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80',
+      plant_name: 'Sunflower',
+      difficulty: 1,
+      watering: 'Regularly, once or twice a week',
+      sun: 'Full sun',
+      indoor_outdoor: 'Outdoor',
+      zone: '2-11'
+      },
+      {
+        plant_image: 'https://images.unsplash.com/photo-1557929036-44a5d490d527?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80',
+        plant_name: 'Tulip',
+        difficulty: 2,
+        watering: 'Regularly, once or twice a week',
+        sun: 'Full sun or partial shade',
+        indoor_outdoor: 'Outdoor',
+        zone: '3-8'
+      },
+      {
+        plant_image: 'https://images.unsplash.com/photo-1576014131341-fe1486fb2475?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=383&q=80',
+        plant_name: 'Orchid',
+        difficulty: 3,
+        watering: 'Sparingly, every 1-2 weeks',
+        sun: 'Indirect sunlight',
+        indoor_outdoor: 'Indoor',
+        zone: 'N/A (tropical plant)'
+        },
+
 ]
 const seedPlants = async () => {
   await sequelize.sync({ force: true });
