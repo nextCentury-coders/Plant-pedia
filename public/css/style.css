@@ -28,7 +28,8 @@ header {
 
 .login-container {
   display: flex;
-  justify-content: right;
+  justify-content: center;
+  
 }
 .landing-container
 {
@@ -37,6 +38,7 @@ header {
   text-align: center;
 
 }
+
 
 /* home page */
 
