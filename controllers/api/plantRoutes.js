@@ -65,7 +65,7 @@ router.post('/newPlant', async (req, res) => {
     });
 
     // Return the newly created plant object as a response
-    res.status(201).json(newPlant);
+    res.redirect("/");
   } catch (error) {
     // Return an error response if there was an error creating the new plant
     res.status(500).json({ message: 'Error creating plant', error: error });
