@@ -1,4 +1,3 @@
-
 header {
   float: right;
   padding: 20px 10px;
@@ -6,19 +5,16 @@ header {
   width: 100%;
 }
 
-.navbar-nav   {
+.navbar-nav {
   border: 1px solid;
-  
+
   padding: auto;
-  
 
   justify-content: center;
- 
+
   /* padding-left: 20px 10px; */
   font-size: 25px;
   width: 100%;
-  
-
 }
 
 .nav-item {
@@ -89,8 +85,6 @@ body {
   margin: 0;
   padding: 0;
   background-color: #f2f2f2;
-  
- 
 }
 
 .card {
@@ -179,4 +173,24 @@ input {
   height: 100vh;
   font-size: 24px;
   font-weight: bold;
+}
+
+.reviews {
+  border: 1px solid;
+  height: 300px;
+  margin: 10px;
+}
+
+.review-form {
+  display: flex;
+}
+
+.review-input {
+  flex: 1 1 100%;
+  min-height: 35px; /* optional, sets a minimum height for the textarea */
+  resize: none;
+}
+
+.review-btn {
+  flex: 0 0 5%;
 }

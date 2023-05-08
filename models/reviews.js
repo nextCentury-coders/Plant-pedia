@@ -9,31 +9,35 @@ Review.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
-      autoIncrement: true
+      autoIncrement: true,
     },
     comment: {
       type: DataTypes.STRING,
-      allowNull: false
-    },
-    created_at: {
-      type: DataTypes.DATE,
       allowNull: false,
-      defaultValue: DataTypes.NOW
     },
     user_id: {
       type: DataTypes.INTEGER,
+      allowNull: false,
       references: {
         model: 'user',
-        key: 'id'
-      }
-    }
+        key: 'id',
+      },
+    },
+    plant_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'plant',
+        key: 'id',
+      },
+    },
   },
   {
     sequelize,
-    timestamps: false,
+    timestamps: true,
     freezeTableName: true,
     underscored: true,
-    modelName: 'review'
+    modelName: 'review',
   }
 );
 

@@ -47,6 +47,7 @@ router.get("/plants/:id", async (req, res) => {
       zone: plant.zone,
       // retrieve other data for this plant here
     };
+    req.session.plant_id = plantData.id;
     res.render("plantInfo", { plantData, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.error(err);

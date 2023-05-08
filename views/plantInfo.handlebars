@@ -1,6 +1,12 @@
 <html>
   <body>
-    <div class="card">
+    <div class="optionsPanel">
+      <a href="#card">Card</a>
+      <a href="#update">Update Info</a>
+      <a href="#reviews">Reviews</a>
+    </div>
+
+    <div class="card" id="card">
       <div class="img">
         <img src="{{plantData.image}}" alt="" />
       </div>
@@ -23,7 +29,12 @@
     </div>
 
     {{#if loggedIn}}
-      <form action="/plants/{{plantData.id}}" method="POST" class="form">
+      <form
+        action="/plants/{{plantData.id}}"
+        method="POST"
+        class="form"
+        id="update"
+      >
         <h4>Anything wrong above? Please update if you want!</h4>
         <label for="difficulty">Difficulty:</label><br />
         <input
@@ -66,6 +77,24 @@
     {{else}}
       <h1>Please login</h1>
     {{/if}}
+
+    <div id="reviews" class="reviews">
+      <input type="hidden" name="plant_id" value="{{ plantData.id }}">
+      <form
+        class="review-form"
+        method="post"
+        action="/api/plants/reviews"
+      >
+        <textarea
+          id="review"
+          class="review-input"
+          placeholder="Add your review..."
+          name="comment"
+        ></textarea>
+        <button type="submit" class="review-btn">Submit</button>
+      </form>
+    </div>
+
     <style>
       .card { display: flex; flex-direction: row; margin: 10px; } .img img {
       height: 250px; width: 275px; } .info { margin-inline-start: 10px; } .form
