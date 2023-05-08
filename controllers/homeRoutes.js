@@ -124,8 +124,6 @@ router.get("/indoor", (req, res) => {
     // serialize the results
     const plantResults = results.map((item) => item.get({ plain: true }));
 
-    console.log(plantResults);
-
     res.render("indoorPlants", {
       plantList: plantResults,
       loggedIn: req.session.loggedIn,
@@ -142,8 +140,6 @@ router.get("/outdoor", (req, res) => {
     // serialize the results
     const plantResults = results.map((item) => item.get({ plain: true }));
 
-    console.log(plantResults);
-
     res.render("outdoorPlants", {
       plantList: plantResults,
       loggedIn: req.session.loggedIn,
@@ -155,8 +151,6 @@ router.get("/allPlants", (req, res) => {
   Plant.findAll({}).then((results) => {
     // serialize the results
     const plantResults = results.map((item) => item.get({ plain: true }));
-
-    console.log(plantResults);
 
     res.render("allPlants", {
       plantList: plantResults,

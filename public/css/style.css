@@ -257,3 +257,9 @@ input {
   border-left: none;
   border-right: none;
 }
+
+
+/* Adding new plant */
+.form {
+  margin: 10px;
+}
