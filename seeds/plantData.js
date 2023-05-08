@@ -1,7 +1,7 @@
 const sequelize = require("../config/connection")
 const { Plant } = require("../models");
 const plantData = [
-      {
+  {
       // Photo by Markus Spiske
       plant_image: 'https://images.unsplash.com/photo-1598512752271-33f913a5af13?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
       plant_name: 'Tomato',
@@ -18,7 +18,7 @@ const plantData = [
       difficulty: 2,
       watering: 'Regularly, every 3-4 days',
       sun: 'Partial sun',
-      indoor_outdoor: 'Indoor/Outdoor',
+      indoor_outdoor: 'Indoor-Outdoor',
       zone: '10a, 10b, 11a, 11b'
       },
       {
@@ -38,7 +38,7 @@ const plantData = [
       difficulty: 1,
       watering: 'Regularly, every 3-4 days',
       sun: 'Partial sun',
-      indoor_outdoor: 'Indoor/Outdoor',
+      indoor_outdoor: 'Indoor-Outdoor',
       zone: '3'
       },
       {
@@ -48,7 +48,7 @@ const plantData = [
       difficulty: 2,
       watering: 'Infrequently, every 5-7 days',
       sun: 'Full sun',
-      indoor_outdoor: 'Indoor/Outdoor',
+      indoor_outdoor: 'Indoor-Outdoor',
       zone: '5-9'
       },
       {
@@ -68,7 +68,7 @@ const plantData = [
       difficulty: 2,
       watering: 'Infrequently, every 5-7 days',
       sun: 'Full sun',
-      indoor_outdoor: 'Indoor/Outdoor',
+      indoor_outdoor: 'Indoor-Outdoor',
       zone: '8-9'
       },
 
@@ -123,7 +123,7 @@ const plantData = [
       difficulty: 2,
       watering: 'Regularly, once or twice a week',
       sun: 'partial shade',
-      indoor_outdoor: 'Indoor/Outdoor',
+      indoor_outdoor: 'Indoor-Outdoor',
       zone: '9-11'
       },
       {
@@ -141,7 +141,7 @@ const plantData = [
       difficulty: 2,
       watering: 'Regularly, once or twice a week',
       sun: 'Full sun or partial shade',
-      indoor_outdoor: 'Outdoor/Indoor',
+      indoor_outdoor: 'Outdoor-Indoor',
       zone: '10-11'
       },
       {
@@ -150,7 +150,7 @@ const plantData = [
       difficulty: 2,
       watering: 'Regularly, once or twice a week',
       sun: 'Full sun or partial shade',
-      indoor_outdoor: 'Outdoor/Indoor',
+      indoor_outdoor: 'Outdoor-Indoor',
       zone: '5-9'
       },
       {
@@ -168,7 +168,7 @@ const plantData = [
       difficulty: 2,
       watering: 'Regularly, once or twice a week',
       sun: 'Partial shade',
-      indoor_outdoor: 'Outdoor/Indoor',
+      indoor_outdoor: 'Outdoor-Indoor',
       zone: '6-9'
       },
       {
@@ -177,7 +177,7 @@ const plantData = [
       difficulty: 1,
       watering: 'Moderate, every 1-2 weeks',
       sun: 'Indirect sunlight or partial shade',
-      indoor_outdoor: 'Outdoor/Indoor',
+      indoor_outdoor: 'Outdoor-Indoor',
       zone: '9-11'
       },
       {
@@ -195,30 +195,128 @@ const plantData = [
       difficulty: 2,
       watering: 'Moderate to high, keep soil moist',
       sun: 'Indirect or low light',
-      indoor_outdoor: 'Indoor/Outdoor',
+      indoor_outdoor: 'Indoor-Outdoor',
       zone: '11-12'
       },
       {
-        plant_image: 'https://images.unsplash.com/photo-1616961002389-504228edfcb7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
-        plant_name: 'Snake Plant',
-        difficulty: 1,
-        watering: 'Low, every 2-6 weeks',
-        sun: 'Indirect or low light',
-        indoor_outdoor: 'Indoor/Outdoor',
-        zone: '9-11'
-        },
-        {
-          plant_image: 'https://images.unsplash.com/photo-1509085574999-9f0dd537364b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',
-          plant_name: 'English Ivy',
-          difficulty: 2,
-          watering: 'Moderate, every 1-2 weeks',
-          sun: 'Bright, indirect sunlight',
-          indoor_outdoor: 'Indoor/Outdoor',
-          zone: '10-12'
-          },
-      
-    
-  
+      plant_image: 'https://images.unsplash.com/photo-1616961002389-504228edfcb7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
+      plant_name: 'Snake Plant',
+      difficulty: 1,
+      watering: 'Low, every 2-6 weeks',
+      sun: 'Indirect or low light',
+      indoor_outdoor: 'Indoor-Outdoor',
+      zone: '9-11'
+      },
+      {
+      plant_image: 'https://images.unsplash.com/photo-1509085574999-9f0dd537364b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',
+      plant_name: 'English Ivy',
+      difficulty: 2,
+      watering: 'Moderate, every 1-2 weeks',
+      sun: 'Bright, indirect sunlight',
+      indoor_outdoor: 'Indoor-Outdoor',
+      zone: '10-12'
+      },
+      {
+      plant_image: 'https://images.unsplash.com/photo-1589999251554-21789097351f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=396&q=80',
+      plant_name: 'Chinese Money Plant',
+      difficulty: 1,
+      watering: 'Moderate, every 1-2 weeks',
+      sun: 'Indirect or partial sunlight',
+      indoor_outdoor: 'Indoor-Outdoor',
+      zone: '10-12'
+      },
+      {
+      plant_image: 'https://images.unsplash.com/photo-1591656884447-8562e2373a66?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
+      plant_name: 'Rubber Plant',
+      difficulty: 2,
+      watering: 'Moderate, every 1-2 weeks',
+      sun: 'Bright, indirect sunlight',
+      indoor_outdoor: 'Indoor or outdoor (but prefers shade)',
+      zone: '10-12'
+      },
+      {
+      plant_image: 'https://images.unsplash.com/photo-1624622434922-ab4f0662fb74?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80',
+      plant_name: 'Philodendron',
+      difficulty: 1,
+      watering: 'Moderate, every 1-2 weeks',
+      sun: 'Indirect or partial sunlight',
+      indoor_outdoor: 'Indoor or outdoor (but prefers shade)',
+      zone: '10-12'
+      },
+      {
+      plant_image: 'https://images.unsplash.com/photo-1619398221730-09294c6d4139?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
+      plant_name: 'Boston Fern',
+      difficulty: 1,
+      watering: 'High, keep soil moist',
+      sun: 'Indirect or low light',
+      indoor_outdoor: 'Indoor or outdoor (but prefers shade)',
+      zone: '9-11'
+      },
+      {
+      plant_image: 'https://images.unsplash.com/photo-1569745358610-b01866003860?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80',
+      plant_name: 'Aloe Vera',
+      difficulty: 1,
+      watering: 'High, keep soil moist',
+      sun: 'Bright, indirect sunligh',
+      indoor_outdoor: 'Indoor or outdoor (but prefers shade)',
+      zone: '9-11'
+      },
+      {
+      plant_image: 'https://images.unsplash.com/photo-1557768960-c2d136235503?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80',
+      plant_name: 'Geraniums',
+      difficulty: 2,
+      watering: 'Regularly, every 2-3 days',
+      sun: 'Full sun to partial shade',
+      indoor_outdoor: 'Outdoor',
+      zone: '3-10'
+      },
+
+      {
+      plant_image: 'https://images.unsplash.com/photo-1661686944196-f0bfc3494011?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80',
+      plant_name: 'Begonias',
+      difficulty: 2,
+      watering: 'Regularly, every 2-3 days',
+      sun: 'Partial to full shade',
+      indoor_outdoor: 'Outdoor',
+      zone: '10-11'
+      },
+      {
+      plant_image: 'https://images.unsplash.com/photo-1629727773500-8f0f6162930b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',
+      plant_name: 'Petunias',
+      difficulty: 2,
+      watering: 'Regularly, every 2-3 days',
+      sun: 'Full sun',
+      indoor_outdoor: 'Outdoor',
+      zone: '10-11'
+      },
+      {
+      plant_image: 'https://images.unsplash.com/photo-1592477480509-d798acae1098?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80',
+      plant_name: 'Marigolds',
+      difficulty: 2,
+      watering: 'Regularly, every 2-3 days',
+      sun: 'Full sun',
+      indoor_outdoor: 'Outdoor',
+      zone: '2-11'
+      },
+      {
+      plant_image: 'https://images.unsplash.com/photo-1567990989224-6441e1483ac8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=386&q=80',
+      plant_name: 'Hibiscus',
+      difficulty: 2,
+      watering: 'Regularly, every 2-3 days',
+      sun: 'Full sun',
+      indoor_outdoor: 'Outdoor',
+      zone: '9-11'
+      },
+      {
+      plant_image: 'https://images.unsplash.com/photo-1659951273428-a6be0d1e8753?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80',
+      plant_name: 'impatiens',
+      difficulty: 2,
+      watering: 'Regularly, every 2-3 days',
+      sun: 'Partial shade to full shade',
+      indoor_outdoor: 'Outdoor',
+      zone: '10-11'
+      },
+                  
 
 ]
 const seedPlants = async () => {
