@@ -71,15 +71,7 @@ const plantData = [
       indoor_outdoor: 'Indoor/Outdoor',
       zone: '8-9'
     },
-    {
-    plant_image: 'https://images.unsplash.com/photo-1503149779833-1de50ebe5f8a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1335&q=80',
-    plant_name: 'Machinam Manihot',
-    difficulty: 2,
-    watering: 'Regularly, every 2-3 days',
-    sun: 'Partial shade to full sun',
-    indoor_outdoor: 'Indoor/Outdoor',
-    zone: '9-11'
-    },
+
     {
       plant_image: 'https://images.unsplash.com/photo-1616844868137-7ffaf43c2d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=385&q=80',
       plant_name: 'Rose',
