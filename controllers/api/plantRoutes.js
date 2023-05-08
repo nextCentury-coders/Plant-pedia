@@ -1,49 +1,42 @@
 const router = require("express").Router();
 const { Plant, Review, User } = require("../../models");
 
+router.get("/", async (req, res) => {
+  try {
+    const plantData = await Plant.findAll({});
+    console.log("hello world");
+    res.status(200).json(plantData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
-router.get('/', async (req, res) => {
-    try {
-      const plantData = await Plant.findAll({
-        
-      });
-      console.log('hello world')
-      res.status(200).json(plantData);
-    } catch (err) {
-      res.status(500).json(err);
-    }
-  });
-  
+router.post("/reviews", async (req, res) => {
+  console.log("POST request to /plants/:id/reviews was received.");
+  try {
+    const { comment } = req.body;
+    const plant_id = req.session.plant_id;
 
-// router.get("/", async (req, res) => {
-//     try {
-//       const plants = await Plant.findAll();
-//       console.log(plants);
-//       const plantList = await Promise.all(
-//         plants.map(async (plant) => {
-//           const plantData = {
-//             id: plant.id,
-//             image: plant.plant_image,
-//             name: plant.plant_name,
-//             difficulty: plant.difficulty,
-//             water: plant.watering,
-//             sun: plant.sun,
-//             indoor_outdoor: plant.indoor_outdoor,
-//             zone: plant.zone,
-//             // retrieve other data for this plant here
-//           };
-//           return plantData;
-//         })
-//       );
-  
-//       // Further code here for handling the plantList data or sending it as a response
-  
-//     } catch (error) {
-//       console.error(error);
-//       // Handle the error appropriately
-//     }
-//   });
-  
+    console.log("Comment:", comment);
+    console.log("Plant ID:", req.session.plant_id);
+
+    const reviewData = {
+      comment,
+      plant_id,
+      user_id: req.session.user_id,
+    };
+
+    const newReview = await Review.create(reviewData);
+
+    console.log("New Review:", newReview);
+
+    res.redirect(`/plants/${plant_id}`);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 // -> POST   /api/plants/
 router.post("/", async (req, res) => {
   console.log(req.body);
