@@ -2,13 +2,31 @@ const router = require('express').Router();
 const user = require('../../models/user');
 
 router.post('/', async (req, res) => {
+  console.log("email",req.body.email);
+  console.log("name", req.body.username);
   try {
-    const userData = await user.create(req.body);
-    res.json(userData)
+    const { email, name, password } = req.body;
+    const newUser = await user.create({ email, name, password});
 
+    req.session.save(() => {
+      req.session.user_id = newUser.id;
+      req.session.loggedIn = true;
+      console.log("h",req.session.loggedIn);
+      res.render("landingPage", { loggedIn: req.body.loggedIn });
+    });
+
+    // res.status(200).json(newUser);
   } catch (err) {
-    res.status(400).json(err);
+    console.log(err);
+    res.status(500).json(err);
   }
+  // try {
+  //   const userData = await user.create(req.body);
+  //   res.json(userData)
+
+  // } catch (err) {
+  //   res.status(400).json(err);
+  // }
 });
 
 // Set up post route for signup
@@ -18,9 +36,14 @@ router.post("/signup", async (req, res) => {
   try {
     const { email, name, password } = req.body;
     const newUser = await user.create({ email, name, password});
-    req.session.loggedIn = true;
-    console.log("h",req.session.loggedIn);
-    res.render("login", { loggedIn: req.body.loggedIn });
+
+    req.session.save(() => {
+      req.session.user_id = newUser.id;
+      req.session.loggedIn = true;
+      console.log("h",req.session.loggedIn);
+      res.render("landingPage", { loggedIn: req.body.loggedIn });
+    });
+
     // res.status(200).json(newUser);
   } catch (err) {
     console.log(err);
