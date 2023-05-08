@@ -83,7 +83,7 @@ router.get("/new", async (req, res) => {
 router.get("/indoor", (req, res) => {
   Plant.findAll({
     where: {
-      indoor_outdoor: "Indoor/Outdoor"
+      indoor_outdoor: "Indoor"
     }
   })
   .then(results => {
@@ -121,5 +121,28 @@ router.get("/outdoor", (req, res) => {
 
 
 }) 
+
+router.get("/allPlants", (req, res) => {
+  Plant.findAll({
+
+  })
+  .then(results => {
+    // serialize the results
+    const plantResults = results.map(item => item.get({plain: true}))
+
+    console.log(plantResults)
+
+    res.render("allPlants", {
+      plantList: plantResults
+    })
+  })
+
+
+
+}) 
+
+
+
+
 
 module.exports = router;

@@ -1,0 +1,21 @@
+<h2>All Plants</h2>
+<div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-4">
+      {{#each plantList as |plant|}}
+        <div class="col">
+          <a href="/plants/{{this.id}}" class="card-link">
+            <div class="main-card">
+              <img
+                src="{{plant.plant_image}}"
+                alt="{{plant.plant_name}}"
+                class="card-img-top"
+              />
+              <div class="card-body">
+                <h5 class="card-title">{{plant.plant_name}}</h5>
+                <p class="card-text">Difficulty: {{plant.difficulty}}</p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+      {{/each}}
+    </div>

@@ -25,7 +25,16 @@ header {
 .login-container {
   display: flex;
   justify-content: center;
+  
 }
+.landing-container
+{
+  /* display: flex; */
+  justify-content: center;
+  text-align: center;
+
+}
+
 
 /* home page */
 
