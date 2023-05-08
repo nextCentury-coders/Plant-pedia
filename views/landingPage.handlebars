@@ -1,13 +1,19 @@
-<!DOCTYPE html>
-<html>
-    <body class="landing-container">
+
+    <div class="landing-container">
       
         <h1>What kind of plants are you looking for?</h1>
+        <div class="landing-buttons">
         <!-- Large button groups (default and split) -->
-        <a href="/allPlants"><button type="button" class="btn btn-secondary btn-lg">show me all plants</button></a>
+        <a href="/allPlants"><button type="button" class="btn btn-success btn-lg">show me all plants</button></a>
         <a href="/outdoor"><button type="button" class="btn btn-secondary btn-lg">outdoor plants</button></a>
         <a href="/indoor"><button type="button" class="btn btn-secondary btn-lg">indoor plants</button></a>
+        </div>
 
+        <form id="search-form">
+            <input type="text" placeholder="Search for plant name" id="keyword"/>
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
 
-    </body>
-</html>
+    </div>
+
+    <script src="/js/search.js"></script>

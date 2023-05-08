@@ -36,6 +36,8 @@ router.get("/plants/:id", async (req, res) => {
   try {
     // Finding the user
     const user = await User.findByPk(req.session.user_id);
+    
+    console.log(req.session.user_id)
 
     const plant = await Plant.findByPk(req.params.id);
     const plantData = {
@@ -141,6 +143,22 @@ router.get("/outdoor", (req, res) => {
     const plantResults = results.map((item) => item.get({ plain: true }));
 
     res.render("outdoorPlants", {
+      plantList: plantResults,
+      loggedIn: req.session.loggedIn,
+    });
+  });
+});
+
+router.get("/search/:keyword", (req, res) => {
+  Plant.findAll({
+    where: {
+      plant_name: req.params.keyword,
+    },
+  }).then((results) => {
+    // serialize the results
+    const plantResults = results.map((item) => item.get({ plain: true }));
+
+    res.render("searchResults", {
       plantList: plantResults,
       loggedIn: req.session.loggedIn,
     });
