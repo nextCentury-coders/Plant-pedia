@@ -1,4 +1,4 @@
-<form action="#" method="POST" class="form">
+<form action="/api/plants/newPlant" method="POST" class="form">
   <h4>Add New Plant</h4>
 
   <label for="plant_image">Plant Image (Please submit link to image):</label><br />
@@ -6,7 +6,6 @@
     type="text"
     id="plant_image"
     name="plant_image"
-    value="{{plantData.plant_image}}"
   /><br />
 
   <label for="plant_name">Plant Name:</label><br />
@@ -14,7 +13,6 @@
     type="text"
     id="plant_name"
     name="plant_name"
-    value="{{plantData.plant_name}}"
   /><br />
 
   <label for="difficulty">Difficulty (1-10):</label><br />
@@ -22,26 +20,24 @@
     type="text"
     id="difficulty"
     name="difficulty"
-    value="{{plantData.difficulty}}"
   /><br />
 
   <label for="water">Watering:</label><br />
-  <input type="text" id="water" name="water" value="{{plantData.water}}" /><br
+  <input type="text" id="water" name="water" /><br
   />
 
   <label for="sun">Sun:</label><br />
-  <input type="text" id="sun" name="sun" value="{{plantData.sun}}" /><br />
+  <input type="text" id="sun" name="sun" /><br />
 
   <label for="indoor_outdoor">Indoor/Outdoor  (Please choose one or the other):</label><br />
   <input
     type="text"
     id="indoor_outdoor"
     name="indoor_outdoor"
-    value="{{plantData.indoor_outdoor}}"
   /><br />
 
   <label for="zone">Hardiness Zone:</label><br />
-  <input type="text" id="zone" name="zone" value="{{plantData.zone}}" /><br />
+  <input type="text" id="zone" name="zone" /><br />
 
   <button type="submit" class="update">Update</button>
 </form>

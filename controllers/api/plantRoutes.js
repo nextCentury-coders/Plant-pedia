@@ -11,6 +11,8 @@ router.get("/", async (req, res) => {
   }
 });
 
+router.post("/")
+
 router.post("/reviews", async (req, res) => {
   console.log("POST request to /plants/:id/reviews was received.");
   try {
@@ -35,6 +37,38 @@ router.post("/reviews", async (req, res) => {
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
+  }
+});
+
+router.post('/newPlant', async (req, res) => {
+  try {
+    // Extract the plant data from the request body
+    const {
+      plant_image,
+      plant_name,
+      difficulty,
+      water,
+      sun,
+      indoor_outdoor,
+      zone,
+    } = req.body;
+
+    // Create a new plant object using the data from the request body
+    const newPlant = await Plant.create({
+      plant_image,
+      plant_name,
+      difficulty,
+      watering: water,
+      sun,
+      indoor_outdoor,
+      zone,
+    });
+
+    // Return the newly created plant object as a response
+    res.status(201).json(newPlant);
+  } catch (error) {
+    // Return an error response if there was an error creating the new plant
+    res.status(500).json({ message: 'Error creating plant', error: error });
   }
 });
 
