@@ -128,6 +128,7 @@ router.get("/indoor", (req, res) => {
 
     res.render("indoorPlants", {
       plantList: plantResults,
+      loggedIn: req.session.loggedIn,
     });
   });
 });
@@ -145,6 +146,7 @@ router.get("/outdoor", (req, res) => {
 
     res.render("outdoorPlants", {
       plantList: plantResults,
+      loggedIn: req.session.loggedIn,
     });
   });
 });
@@ -158,6 +160,7 @@ router.get("/allPlants", (req, res) => {
 
     res.render("allPlants", {
       plantList: plantResults,
+      loggedIn: req.session.loggedIn,
     });
   });
 });
