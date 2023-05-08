@@ -79,12 +79,18 @@
     {{/if}}
 
     <div id="reviews" class="reviews">
-      <input type="hidden" name="plant_id" value="{{ plantData.id }}">
-      <form
-        class="review-form"
-        method="post"
-        action="/api/plants/reviews"
-      >
+      <div class="review-container">
+        {{#each reviewList}}
+          <div class="reviews-section">
+            <h4>{{this.user}}<span class="time"> {{this.created}}</span></h4>
+            <br />
+            <p>{{this.comment}}</p>
+          </div>
+        {{/each}}
+      </div>
+
+      <input type="hidden" name="plant_id" value="{{plantData.id}}" />
+      <form class="review-form" method="post" action="/api/plants/reviews">
         <textarea
           id="review"
           class="review-input"

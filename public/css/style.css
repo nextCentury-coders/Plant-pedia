@@ -188,16 +188,40 @@ input {
   border: 1px solid;
   height: 300px;
   margin: 10px;
+  position: relative;
+}
+
+.review-container {
+  height: 245px;
+  overflow-x: scroll;
+}
+
+.reviews-section {
+  border-bottom: 1px solid black;
+  margin: 10px;
+}
+
+.reviews-section h4 {
+  font-size: 20px;
+}
+
+.reviews-section p {
+  font-size: 15px;
+  margin-top: -15px;
 }
 
 .review-form {
   display: flex;
+  position: absolute;
+  width: 100%;
+  bottom: -20px;
 }
 
 .review-input {
   flex: 1 1 100%;
   min-height: 35px; /* optional, sets a minimum height for the textarea */
   resize: none;
+  outline: none;
 }
 
 .review-btn {

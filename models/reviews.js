@@ -31,6 +31,11 @@ Review.init(
         key: 'id',
       },
     },
+    created: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
+    },
   },
   {
     sequelize,

@@ -30,7 +30,8 @@ router.post("/reviews", async (req, res) => {
 
     console.log("New Review:", newReview);
 
-    res.redirect(`/plants/${plant_id}`);
+    // Once review is posted it will load the same page and bring user right back to reviews section
+    res.redirect(`/plants/${plant_id}#reviews`);
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
