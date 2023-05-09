@@ -154,13 +154,22 @@ const plantData = [
       zone: '5-9'
       },
       {
-      plant_image: 'https://images.unsplash.com/photo-1637538286398-10173661522b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80',
-      plant_name: 'Poinsettia',
+        plant_image: 'https://images.unsplash.com/photo-1576252137965-bfee510aaa6a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
+        plant_name: 'Poinsettia',
+        difficulty: 2,
+        watering: 'Sparingly, every 1-2 weeks',
+        sun: 'Indirect sunlight',
+        indoor_outdoor: 'Indoor',
+        zone: '9-11'
+        },
+      {
+      plant_image: 'https://images.unsplash.com/photo-1504716367505-9f22f6a7e242?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
+      plant_name: 'Dahlia',
       difficulty: 2,
-      watering: 'Sparingly, every 1-2 weeks',
-      sun: 'Indirect sunlight',
-      indoor_outdoor: 'Indoor',
-      zone: '9-11'
+      watering: 'Regularly, about 1-2 inches of water per week, allowing soil to dry out slightly between watering',
+      sun: 'Full sun, at least 6 hours of direct sunlight per day',
+      indoor_outdoor: 'Outdoor',
+      zone: '8-11'
       },
       {
       plant_image: 'https://images.unsplash.com/photo-1650809373203-22461d5d82dd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80',
@@ -315,7 +324,7 @@ const plantData = [
       sun: 'Full sun',
       indoor_outdoor: 'Outdoor',
       zone: '9-11'
-      },
+      }
 
                   
 
