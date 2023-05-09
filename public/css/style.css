@@ -55,7 +55,17 @@ header {
  
 }
 
-
+.indoorplants{
+  justify-content: center;
+  text-align: center;
+ }
+ 
+ 
+ .outdoorplants{
+  justify-content: center;
+  text-align: center;
+ }
+ 
 /* home page */
 
 .main-card {

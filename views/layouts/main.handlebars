@@ -57,15 +57,14 @@
             and if so then we are going to only have the home
             and logout button displayed.
              --}}
-            {{#if loggedIn}}
-            
+            {{#if loggedIn}}           
             {{!-- Created a partial so that the logout button will work no matter what screen the user is on --}}
                 {{>logout-button}}
 
                 {{>add-plant}}
             {{else}}
               <li class="nav-item">
-                <a class="nav-link" href="/login">login</a>
+                <a class="nav-link" href="/login">Login</a>
               </li>
             {{/if}}
           </ul>
