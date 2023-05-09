@@ -283,6 +283,56 @@ input {
 }
 
 
-.text{
-  color: #4caf50;
+=======
+@media only screen and (max-width: 600px) {
+  header {
+    float: none;
+    padding: 10px;
+    font-size: 20px;
+  }
+
+  .navbar-nav {
+    border: none;
+    padding: 10px;
+    justify-content: space-around;
+    font-size: 20px;
+  }
+
+  .nav-item {
+    margin: 0;
+  }
+
+  .login-container {
+    display: block;
+    margin: 20px;
+  }
+
+  .landing-container {
+    height: auto;
+  }
+
+  .main-card {
+    width: 100%;
+    height: auto;
+    margin: 10px 0;
+  }
+
+  .img img {
+    height: 200px;
+    width: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+
+  .info {
+    height: auto;
+  }
+
+  .col-md-6 {
+    width: 100%;
+    position: static;
+    margin: 10px 0;
+  }
 }
+
+
