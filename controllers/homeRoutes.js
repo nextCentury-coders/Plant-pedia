@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const { Op } = require('sequelize');
 const { Plant, Review, User } = require("../models");
 
 router.get("/", async (req, res) => {
@@ -120,7 +121,11 @@ router.get("/new", async (req, res) => {
 router.get("/indoor", (req, res) => {
   Plant.findAll({
     where: {
-      indoor_outdoor: "Indoor",
+      [Op.or]: [
+        { indoor_outdoor: "Indoor/Outdoor"},
+        { indoor_outdoor: "Outdoor/Indoor"},
+        { indoor_outdoor: "Indoor"}
+      ]
     },
   }).then((results) => {
     // serialize the results
@@ -136,7 +141,11 @@ router.get("/indoor", (req, res) => {
 router.get("/outdoor", (req, res) => {
   Plant.findAll({
     where: {
-      indoor_outdoor: "Outdoor",
+      [Op.or]: [
+        { indoor_outdoor: "Indoor/Outdoor"},
+        { indoor_outdoor: "Outdoor/Indoor"},
+        { indoor_outdoor: "Outdoor"}
+      ]
     },
   }).then((results) => {
     // serialize the results

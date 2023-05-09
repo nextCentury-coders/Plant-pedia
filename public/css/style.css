@@ -15,6 +15,7 @@ header {
   /* padding-left: 20px 10px; */
   font-size: 25px;
   width: 100%;
+
 }
 
 .nav-item {
@@ -27,6 +28,11 @@ header {
   justify-content: center;
   
 }
+.allplants {
+  justify-content: center;
+  text-align: center;
+
+}
 .landing-container
 {
   display: flex;
@@ -37,8 +43,8 @@ header {
   height: 80vh;
   align-items: center;
 
-
 }
+
 .landing-buttons {
   display: flex;
   flex-direction: row;
@@ -282,6 +288,8 @@ input {
 .form {
   margin: 10px;
 }
+
+
 
 @media only screen and (max-width: 600px) {
   header {

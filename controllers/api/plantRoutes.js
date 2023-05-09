@@ -11,8 +11,6 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.post("/")
-
 router.post("/reviews", async (req, res) => {
   console.log("POST request to /plants/:id/reviews was received.");
   try {
