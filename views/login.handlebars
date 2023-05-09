@@ -11,15 +11,21 @@
     <h2>Login</h2>
 
     <form id="login-form">
-      <div>
+      <div class="input">
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required />
+        <div class="input-container">
+          <input type="email" id="email" name="email" required />
+          <i class="fa fa-user"></i>
+        </div>
       </div>
-      <div>
+      <div class="input">
         <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required />
+        <div class="input-container">
+          <input type="password" id="password" name="password" required />
+          <i class="fa-solid fa-key"></i>
+        </div>
       </div>
-      <button type="submit">Log in</button>
+      <button type="submit" class="logIn">Log in</button>
     </form>
     <button id="sign-up">Sign up Instead</button>
     {{! Continue as guest link }}
@@ -30,8 +36,10 @@
   <div class="col-md-6" style="display: none;" id="signup">
     <h2>Signup</h2>
 
-    <form class="form signup-form" method="post" 
-    {{!-- action="/api/users/signup" --}}
+    <form
+      class="form signup-form"
+      method="post"
+      {{! action="/api/users/signup" }}
     >
       <div class="form-group">
         <label for="name-signup">name:</label>
@@ -55,9 +63,18 @@
       </div>
     </form>
     <button id="log-in">Log in Instead</button>
-      {{!-- Continue as guest link --}}
-  <a class="nav-link" href="/" id="guest">continue as guest</a>
+    {{! Continue as guest link }}
+    <a class="nav-link" href="/" id="guest">continue as guest</a>
   </div>
 </div>
+
+<style>
+  #login { width: 320px;  box-shadow: 0 0 15px 3px #bfbfbf;} .input-container { position: relative; }
+  .input-container i { position: absolute; left: 10px; top: 50%; transform:
+  translateY(-50%); } input[type=password] { padding-left: 30px; }
+  input[type=email] { padding-left: 30px; } .logIn {
+    width: 100%; height: 40px; margin-top: 10px; border-radius: 5px; border: none; background-color: #4dff88;
+  } #sign-up { width: 100%; height: 40px; border-radius: 5px; border: none; background-color: #4dff88; } .input { margin-top: 10px;}
+</style>
 
 <script src="/js/login.js"></script>
