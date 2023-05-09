@@ -299,6 +299,15 @@ const plantData = [
       zone: '2-11'
       },
       {
+        plant_image: 'https://images.unsplash.com/photo-1659951273428-a6be0d1e8753?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80',
+        plant_name: 'impatiens',
+        difficulty: 2,
+        watering: 'Regularly, every 2-3 days',
+        sun: 'Partial shade to full shade',
+        indoor_outdoor: 'Outdoor',
+        zone: '10-11'
+        },
+      {
       plant_image: 'https://images.unsplash.com/photo-1567990989224-6441e1483ac8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=386&q=80',
       plant_name: 'Hibiscus',
       difficulty: 2,
@@ -307,15 +316,7 @@ const plantData = [
       indoor_outdoor: 'Outdoor',
       zone: '9-11'
       },
-      {
-      plant_image: 'https://images.unsplash.com/photo-1659951273428-a6be0d1e8753?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80',
-      plant_name: 'impatiens',
-      difficulty: 2,
-      watering: 'Regularly, every 2-3 days',
-      sun: 'Partial shade to full shade',
-      indoor_outdoor: 'Outdoor',
-      zone: '10-11'
-      },
+
                   
 
 ]
