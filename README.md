@@ -20,6 +20,10 @@ N/A
 
 This website allows the user to view and search for plants. The user can select to see outdoor, indoor, or all plants. These plants are ranked by difficulty of care when listed for the user. Users can also rate these plants and view ratings from other people on them as well.
 
+## Link
+
+https://nextcentury-coders.github.io/Plant-pedia/
+
 ## Credits
 
 - David Kolodziej - Backend/Frontend
