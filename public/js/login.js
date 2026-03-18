@@ -97,8 +97,6 @@ const switchToLogIn = async (event) => {
 switchToSU.addEventListener("click", switchSignUp);
 switchToLI.addEventListener("click", switchToLogIn);
 
-document.querySelector("#login-form").addEventListener("submit", loginForm);
-
 document
   .querySelector(".signup-form")
   .addEventListener("submit", signupFormHandler);
