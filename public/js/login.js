@@ -37,18 +37,31 @@ const signupFormHandler = async (event) => {
   const email = document.querySelector("#email-signup").value.trim();
   const password = document.querySelector("#password-signup").value.trim();
 
-  if (name && email && password) {
-    const response = await fetch("/api/users", {
-      method: "POST",
-      body: JSON.stringify({ name, email, password }),
-      headers: { "Content-Type": "application/json" },
-    });
+  if (!name) {
+    alert("Please enter your full name.");
+    return;
+  }
 
-    if (response.ok) {
-      window.location.href = "/";
-    } else {
-      alert(response.statusText);
-    }
+  if (!email) {
+    alert("Please enter your email address.");
+    return;
+  }
+
+  if (password.length < 8) {
+    alert("Password must be at least 8 characters long.");
+    return;
+  }
+
+  const response = await fetch("/api/users", {
+    method: "POST",
+    body: JSON.stringify({ name, email, password }),
+    headers: { "Content-Type": "application/json" },
+  });
+
+  if (response.ok) {
+    window.location.href = "/";
+  } else {
+    alert("Something went wrong. Please try again.");
   }
 };
 
